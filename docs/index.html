@@ -1,6 +1,118 @@
 <!DOCTYPE html>
 <html>
+<div>
+
+<head>
+<style>
+
+html {
+  background: #466368;
+  background: radial-gradient(#ffffff, #808080);
+}
+
+img.resize {
+  max-width:60%;
+  max-height:60%;
+}
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    background-color: #c00000;
+    border-top: none;
+}
+</style>
+    <script type = "text/javascript">
+        function changeImage(a){
+        document.getElementById("watch").src = a;
+        }
+
+        function openTab(evt, cityName) {
+    var i, tabcontent, tablinks;
+
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+    </script>
+</head>
 <body>
-hello world
+<center>
+<table width="60%">
+    <tr>
+        <td width="30%" height="400px" align="center" bgcolor="#ffffff">
+            <img id = "watch" class = "resize" src = "Images/garminBLK.jpg">
+        </td>
+    <td padding="5px"> <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'Nokia')">Nokia</button>
+        <button class="tablinks" onclick="openTab(event, 'Garmin')">Garmin</button>
+    </div>
+
+        <!-- Tab content -->
+        <div id="Nokia" class="tabcontent">
+            <h3>Nokia</h3>
+            <p><button onclick='changeImage("Images/NokiaBLU.jpg")'>BLUE</button>
+                <button onclick='changeImage("Images/NokiaBLK.jpg")' style="background-color: #000000">_ </button>
+                <button onclick='changeImage("Images/NokiaMIN.jpg")'>Mineral Water</button>
+                <button onclick='changeImage("Images/NokiaRAS.jpg")'>Rasberry</button>
+                <button onclick='changeImage("Images/NokiaRed.jpg")'>RED</button>
+                <button onclick='changeImage("Images/NokiaSIL.jpg")'>Silver</button>
+                <button onclick='changeImage("Images/NokiaWHI.jpg")'>White</button></p>
+        </div>
+
+        <div id="Garmin" class="tabcontent">
+            <h3>Garmin</h3>
+            <p><button onclick='changeImage("Images/garminBLU.jpg")'>BLUE</button>
+                <button onclick='changeImage("Images/garminBLK.jpg")'>BLACK</button>
+                <button onclick='changeImage("Images/garminPUR.jpg")'>PURPLE</button></p>
+        </div></td>
+    </tr>
+</table>
+
+
+
+
+
+<button><h1>I want this one</h1></button>
+</center>
 </body>
+</div>
 </html>
